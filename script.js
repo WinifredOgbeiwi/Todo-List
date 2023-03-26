@@ -19,31 +19,25 @@ const todosListEl = document.getElementById('todos-list');
 const errorMessageEl = document.querySelector(".error-message");
 
 
-// 
+let todos = [];
 
 let EditTodoId = -1
-// FORM SUBMIT
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
-  // save todo
   saveTodo();
-  // 1st render
   renderTodos();
 })
 
 function saveTodo() {
   const todoValue = todoInput.value;
-// duplicate todos
 const isDuplicate = todos.some(
     (todo) => todo.value.toUpperCase() === todoValue.toUpperCase())
-  // empty input
   const isEmpty = todoValue === '';
   if (isEmpty){
-    errorMessage("EMPTY");
+    errorMessage("Input a Task!");
   }
   else if (isDuplicate) {
-    errorMessage("Todo already exists!");
+    errorMessage("Task already exists!");
   }
   else{
  
@@ -57,26 +51,21 @@ const isDuplicate = todos.some(
    todos.push({
      value: todoValue,
      checked: false,
-     color: "#" + Math.floor(Math.random() * 16777215).toString(16),
+     color: "#890650",
    });
  }
     todoInput.value = "";
   //  console.log(todos)
   }
-  
-  
 }
 
 function renderTodos() {
-  // if (todos.length === 0) {
-  //   todosListEl.innerHTML = "<center>Nothing to do!</center>";
-  //   return;
-  // }
+  if (todos.length === 0) {
+    todosListEl.innerHTML = "<center class='nth-to-do'>Task List is empty!</center>";
+    return;
+  }
 
-  // CLEAR ELEMENT BEFORE A RE-RENDER
   todosListEl.innerHTML = "";
-
-  // RENDER TODOS
   todos.forEach((todo, index) => {
     todosListEl.innerHTML += `
 
@@ -116,6 +105,7 @@ function checkTodo(todoId) {
   todos = todos.map((todo, index) => ({
     ...todo,
     checked: index === todoId ? !todo.checked : todo.checked,
+
   }));
     renderTodos();
 }
@@ -141,6 +131,13 @@ function errorMessage(msg) {
   // notification leave
   setTimeout(() => {
     errorMessageEl.classList.remove("notif-enter");
-  }, 2000);
+  }, 1500);
 }
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transition", () => {
+    document.body.removeChild("loader");
+  });
+});
 
