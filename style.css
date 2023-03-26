@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 1rem 0;
+  display: grid;
+  place-items: center;
+}
+
+a{
+color: #b10968;
+}
+a:hover{
+   color: #890650; 
+}
+.main, section {
+  width: 400px;
+  height: 500px;
+  padding: 1rem 1rem;
+  border: 2px solid black;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 10px 10px #b10968;
+text-align: center;
+}
+
+.main-text h1 {
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+.main-text p{
+margin: 1rem 0;
+}
+.button {
+  color: white;
+  background-color: #b10968;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+  height: 3.7rem;
+  border-radius: 0.5rem;
+  margin-bottom: .5rem;
+}
+button:hover {
+  background-color: #890650;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+/* SIGN UP PAGE */
+input{
+    display: block;
+    margin: 1rem 0;
+    border: 1px solid #890650;
+    padding: .5rem;
+    width: 100%;
+    border-radius: 0.2rem;
+}
+h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.bi{
+font-weight: 700;
+font-size: 25px;
+color: #890650;
+}

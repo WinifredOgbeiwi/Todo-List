@@ -1,0 +1,54 @@
+/* to do section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+   /* background-image: url(./images/pexels-ann-poan-5797899.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover; */
+   position:relative;
+} 
+.todo-wrapper{
+    height: 100vh;
+            /* background-color: #b10968d0; */
+            border: 1px solid black;
+            opacity: 0.8;
+}
+.todo, .todo-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.todo{
+gap: 40px;
+}
+
+.container{
+width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.error-message {
+    position: absolute;
+    padding: .5rem 2rem;
+    width: 60%;
+    opacity: 0.96;
+ transition: 300ms right ease-in-out;
+    border-radius: .2rem;
+    background-color:#890650;
+    top: 50px;
+    color: #fff;
+    display: none;
+}
+.notif-enter {
+    display: block;
+    top: 10px;
+}
