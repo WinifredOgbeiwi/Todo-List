@@ -20,7 +20,7 @@ const errorMessageEl = document.querySelector(".error-message");
 
 
 // 
-let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
 let EditTodoId = -1
 // FORM SUBMIT
 form.addEventListener("submit", function (e) {
@@ -30,7 +30,6 @@ form.addEventListener("submit", function (e) {
   saveTodo();
   // 1st render
   renderTodos();
-  localStorage.setItem("todos", JSON.stringify(todos));
 })
 
 function saveTodo() {
@@ -144,3 +143,4 @@ function errorMessage(msg) {
     errorMessageEl.classList.remove("notif-enter");
   }, 2000);
 }
+
